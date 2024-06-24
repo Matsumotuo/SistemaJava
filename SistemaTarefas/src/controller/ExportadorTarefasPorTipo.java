@@ -69,33 +69,33 @@ public class ExportadorTarefasPorTipo {
                 }else if (tarefa instanceof TarefaAlimentacao) {
                     writer.println("Tarefa de Estudo: " + tarefa.getTitulo());
                     writer.println("Descrição: " + tarefa.getDescricao());
-                    writer.println("Disciplina: " + ((TarefaEstudo) tarefa).getDisciplina());
+                    writer.println("Disciplina: " + ((TarefaAlimentacao) tarefa).getPrato());
                     writer.println();
                     totalAlimento++;
                 }
                 else if (tarefa instanceof TarefaDataComemorativa) {
                     writer.println("Tarefa de Estudo: " + tarefa.getTitulo());
                     writer.println("Descrição: " + tarefa.getDescricao());
-                    writer.println("Disciplina: " + ((TarefaEstudo) tarefa).getDisciplina());
+                    writer.println("Disciplina: " + ((TarefaDataComemorativa) tarefa).getDatas());
                     writer.println();
                     totalNiver++;
                 }
                 else if (tarefa instanceof TarefaExercicio) {
                     writer.println("Tarefa de Estudo: " + tarefa.getTitulo());
                     writer.println("Descrição: " + tarefa.getDescricao());
-                    writer.println("Disciplina: " + ((TarefaEstudo) tarefa).getDisciplina());
+                    writer.println("Disciplina: " + ((TarefaExercicio) tarefa).getTipoExercicio());
                     writer.println();
                     totalExer++;
                 }else if (tarefa instanceof TarefaFinanceira) {
                     writer.println("Tarefa de Estudo: " + tarefa.getTitulo());
                     writer.println("Descrição: " + tarefa.getDescricao());
-                    writer.println("Disciplina: " + ((TarefaEstudo) tarefa).getDisciplina());
+                    writer.println("Disciplina: " + ((TarefaFinanceira) tarefa).getOlharData());
                     writer.println();
                     totalFinanc++;
                 }else if (tarefa instanceof TarefaProjetos) {
                     writer.println("Tarefa de Estudo: " + tarefa.getTitulo());
                     writer.println("Descrição: " + tarefa.getDescricao());
-                    writer.println("Disciplina: " + ((TarefaEstudo) tarefa).getDisciplina());
+                    writer.println("Disciplina: " + ((TarefaProjetos) tarefa).getQual());
                     writer.println();
                     totalProjeto++;
                 }
