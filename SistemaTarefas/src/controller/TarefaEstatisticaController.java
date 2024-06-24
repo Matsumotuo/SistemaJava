@@ -5,23 +5,23 @@ import java.util.List;
 
 public class TarefaEstatisticaController {
     public int contarTarefasPorPrioridade(List<Tarefa> tarefas, String prioridade) {
-        int count = 0;
+        int contador = 0;
         for (Tarefa tarefa : tarefas) {
             if (tarefa.getPrioridade().equalsIgnoreCase(prioridade)) {
-                count++;
+                contador++;
             }
         }
-        return count;
+        return contador;
     }
 
     public int contarTarefasPorStatus(List<Tarefa> tarefas, String status) {
-        int count = 0;
+        int contador = 0;
         for (Tarefa tarefa : tarefas) {
             if (tarefa.getStatus().equalsIgnoreCase(status)) {
-                count++;
+                contador++;
             }
         }
-        return count;
+        return contador;
     }
 
     public void mostrarEstatisticas(List<Tarefa> tarefas) {

@@ -24,7 +24,7 @@ public class Main {
             System.out.println("7. Sair");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
-            scanner.nextLine();  // Consumir nova linha
+            scanner.nextLine();  
 
             switch (opcao) {
                 case 1:
@@ -61,7 +61,7 @@ public class Main {
         System.out.println("\n=== Adicionar Tarefa ===");
         System.out.print("Tipo de Tarefa (1-Estudo, 2-Trabalho, 3-Lazer, 4-Pessoal, 5-Urgente): ");
         int tipo = scanner.nextInt();
-        scanner.nextLine();  // Consumir nova linha
+        scanner.nextLine();  
 
         System.out.print("Título: ");
         String titulo = scanner.nextLine();
@@ -114,7 +114,7 @@ public class Main {
         System.out.println("\n=== Editar Tarefa ===");
         System.out.print("ID da Tarefa a editar: ");
         int id = scanner.nextInt();
-        scanner.nextLine();  // Consumir nova linha
+        scanner.nextLine();  
 
         System.out.print("Novo Título: ");
         String titulo = scanner.nextLine();
@@ -136,7 +136,7 @@ public class Main {
         System.out.println("\n=== Excluir Tarefa ===");
         System.out.print("ID da Tarefa a excluir: ");
         int id = scanner.nextInt();
-        scanner.nextLine();  // Consumir nova linha
+        scanner.nextLine();  
 
         tarefaController.excluirTarefa(id);
         System.out.println("Tarefa excluída com sucesso!");
@@ -169,7 +169,7 @@ public class Main {
         System.out.println("\n=== Marcar Tarefa como Concluída ===");
         System.out.print("ID da Tarefa a marcar como Concluída: ");
         int id = scanner.nextInt();
-        scanner.nextLine();  // Consumir nova linha
+        scanner.nextLine();  
 
         for (Tarefa tarefa : tarefaController.listarTarefas()) {
             if (tarefa.getId() == id) {
