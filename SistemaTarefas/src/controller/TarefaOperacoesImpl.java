@@ -1,17 +1,27 @@
 package controller;
 
-import controller.*;
-import models.*;
-import view.*;
 import java.util.List;
 import java.util.Scanner;
+
+import models.Tarefa;
+import models.TarefaAlimentacao;
+import models.TarefaDataComemorativa;
+import models.TarefaEstudo;
+import models.TarefaExercicio;
+import models.TarefaFinanceira;
+import models.TarefaLazer;
+import models.TarefaPessoal;
+import models.TarefaProjetos;
+import models.TarefaTrabalho;
+import models.TarefaUrgente;
+import view.TarefaView;
 
 public class TarefaOperacoesImpl implements TarefaOperacoes {
     @Override
     public void adicionarTarefa(TarefaController tarefaController, Scanner scanner) {
 
             System.out.println("\n=== Adicionar Tarefa ===");
-            System.out.print("Tipo de Tarefa (1-Estudo, 2-Trabalho, 3-Lazer, 4-Pessoal, 5-Urgente): ");
+            System.out.print("Tipo de Tarefa (1-Estudo, 2-Trabalho, 3-Lazer, 4-Pessoal, 5-Urgente, 6-Exercicios, 7-Financeiro, 8-Alimentação, 9-Datas comemorativas, 10-Projeto): ");
             int tipo = scanner.nextInt();
             scanner.nextLine();
     
@@ -58,6 +68,42 @@ public class TarefaOperacoesImpl implements TarefaOperacoes {
                     novaTarefa = new TarefaUrgente(tarefaController.listarTarefas().size() + 1, titulo, descricao,
                             dataTarefa, prioridade, status, motivoUrgencia);
                     break;
+
+                    case 6:
+                    System.out.print("Tipos de Exercicio: ");
+                    String TipoExercicio = scanner.nextLine();
+                    novaTarefa = new TarefaExercicio(tarefaController.listarTarefas().size() + 1, titulo, descricao,
+                            dataTarefa, prioridade, status, TipoExercicio);
+                    break;
+
+                    case 7:
+                    System.out.print("Boletos: ");
+                    String OlharData = scanner.nextLine();
+                    novaTarefa = new TarefaFinanceira(tarefaController.listarTarefas().size() + 1, titulo, descricao,
+                            dataTarefa, prioridade, status, OlharData);
+                    break;
+
+                    case 8:
+                    System.out.print("prato do dia: ");
+                    String Prato = scanner.nextLine();
+                    novaTarefa = new TarefaAlimentacao(tarefaController.listarTarefas().size() + 1, titulo, descricao,
+                            dataTarefa, prioridade, status, Prato);
+                    break;
+
+                    case 9:
+                    System.out.print("Datas comemorativas: ");
+                    String Datas = scanner.nextLine();
+                    novaTarefa = new TarefaDataComemorativa(tarefaController.listarTarefas().size() + 1, titulo, descricao,
+                            dataTarefa, prioridade, status, Datas);
+                    break;
+
+                    case 10:
+                    System.out.print("Qual: ");
+                    String Qual = scanner.nextLine();
+                    novaTarefa = new TarefaProjetos(tarefaController.listarTarefas().size() + 1, titulo, descricao,
+                            dataTarefa, prioridade, status, Qual);
+                    break;
+
                 default:
                     System.out.println("Tipo de tarefa inválido.");
                     return;
