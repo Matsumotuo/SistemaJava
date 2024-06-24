@@ -8,8 +8,6 @@ public class Tarefa {
     private String prioridade;
     private String status;
 
-
-    //Construtor
     public Tarefa(int id, String titulo, String descricao, String dataTarefa, String prioridade, String status) {
         this.id = id;
         this.titulo = titulo;
@@ -19,7 +17,6 @@ public class Tarefa {
         this.status = status;
     }
 
-    //Get e Set
     public int getId() {
         return id;
     }
@@ -68,7 +65,6 @@ public class Tarefa {
         this.status = status;
     }
 
-    //Override do toString
     @Override
     public String toString() {
         return "Tarefa{" +
