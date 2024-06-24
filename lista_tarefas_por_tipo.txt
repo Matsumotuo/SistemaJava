@@ -1,0 +1,7 @@
+Lista de Tarefas por Tipo:
+
+Total de Tarefas Urgentes: 0
+Total de Tarefas Pessoais: 0
+Total de Tarefas de Trabalho: 0
+Total de Tarefas de Lazer: 0
+Total de Tarefas de Estudo: 0
