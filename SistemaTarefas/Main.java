@@ -25,6 +25,7 @@ public class Main {
             System.out.println("6. Marcar Tarefa como Concluída");
             System.out.println("7. Exportar tarefas por tipo");
             System.out.println("8. Exportar todas as tarefas");
+            System.out.println("9. Importar todas as tarefas");
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
@@ -54,6 +55,13 @@ public class Main {
                     break;
                 case 8:
                     tarefaOperacoes.exportarTodasAsTarefas(tarefaController.listarTarefas());
+                    break;
+                case 9:
+                    List<Tarefa> tarefasImportadas = tarefaOperacoes.importarTodasAsTarefas("todas_as_tarefas.txt");
+                    // Adicionar as tarefas importadas ao controlador de tarefas
+                    for (Tarefa tarefa : tarefasImportadas) {
+                        tarefaController.adicionarTarefa(tarefa);
+                    }
                     break;
                 case 0:
                     ativo = false;

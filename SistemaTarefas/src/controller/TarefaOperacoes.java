@@ -16,4 +16,5 @@ public interface TarefaOperacoes {
     void marcarTarefaComoConcluida(TarefaController tarefaController, Scanner scanner);
     void exportarListaTarefasPorTipo(List<Tarefa> tarefas);
     void exportarTodasAsTarefas(List<Tarefa> tarefas);
+    List<Tarefa> importarTodasAsTarefas(String nomeArquivo);
 }

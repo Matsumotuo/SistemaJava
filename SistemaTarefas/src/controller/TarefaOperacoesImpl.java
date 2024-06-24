@@ -165,4 +165,10 @@ public class TarefaOperacoesImpl implements TarefaOperacoes {
         ExportadorTodasAsTarefas exportador = new ExportadorTodasAsTarefas();
         exportador.exportarTodasAsTarefas(tarefas, "todas_as_tarefas.txt");
     }
+
+    @Override
+    public List<Tarefa> importarTodasAsTarefas(String nomeArquivo) {
+        ImportadorTodasAsTarefas importador = new ImportadorTodasAsTarefas();
+        return importador.importarTodasAsTarefas(nomeArquivo);
+    }
 }
