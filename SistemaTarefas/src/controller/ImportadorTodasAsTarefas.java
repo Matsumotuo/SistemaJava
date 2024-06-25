@@ -22,7 +22,7 @@ public class ImportadorTodasAsTarefas {
                     if (tarefa != null) {
                         tarefas.add(tarefa);
                     }
-                    tarefa = new Tarefa(0, linha, linha, linha, linha, linha);
+                    tarefa = new TarefaConcreta(0, linha, linha, linha, linha, linha);
                     tarefa.setId(Integer.parseInt(linha.substring(4)));
                 } else if (linha.startsWith("Título: ")) {
                     if (tarefa != null) {

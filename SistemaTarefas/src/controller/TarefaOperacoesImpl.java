@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import models.Tarefa;
 import models.TarefaAlimentacao;
+import models.TarefaConcreta;
 import models.TarefaDataComemorativa;
 import models.TarefaEstudo;
 import models.TarefaExercicio;
@@ -133,7 +134,7 @@ public class TarefaOperacoesImpl implements TarefaOperacoes {
             System.out.print("Novo Status (Pendente/Concluída): ");
             String status = scanner.nextLine();
     
-            Tarefa tarefaAtualizada = new Tarefa(id, titulo, descricao, dataTarefa, prioridade, status);
+            Tarefa tarefaAtualizada = new TarefaConcreta(id, titulo, descricao, dataTarefa, prioridade, status);
             tarefaController.editarTarefa(id, tarefaAtualizada);
             System.out.println("Tarefa editada com sucesso!");
         

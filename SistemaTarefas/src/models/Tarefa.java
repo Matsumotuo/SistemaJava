@@ -1,6 +1,6 @@
 package models;
 
-public class Tarefa {
+public abstract class Tarefa {
     private int id;
     private String titulo;
     private String descricao;
@@ -14,7 +14,7 @@ public class Tarefa {
         this.descricao = descricao;
         this.dataTarefa = dataTarefa;
         this.prioridade = prioridade;
-        this.status = status;
+        this.status = "Pendete";
     }
 
     public int getId() {
@@ -76,4 +76,6 @@ public class Tarefa {
                 ", status='" + status + '\'' +
                 '}';
     }
+
 }
+

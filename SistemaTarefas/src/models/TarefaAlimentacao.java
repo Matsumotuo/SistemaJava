@@ -1,7 +1,8 @@
 package models;
+
 import view.ExecutarTarefas;
 
-public class TarefaAlimentacao extends Tarefa implements ExecutarTarefas {
+public class TarefaAlimentacao extends Tarefa implements ExecutarTarefas{
 private String Prato;
 
 
