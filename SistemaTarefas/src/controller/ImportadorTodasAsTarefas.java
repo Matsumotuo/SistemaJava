@@ -10,19 +10,19 @@ import java.util.List;
 
 public class ImportadorTodasAsTarefas {
 
-    public List<Tarefa> importarTodasAsTarefas(String nomeArquivo) {
-        List<Tarefa> tarefas = new ArrayList<>();
+    public List<TodasAsTarefas> importarTodasAsTarefas(String nomeArquivo) {
+        List<TodasAsTarefas> tarefas = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(nomeArquivo))) {
             String linha;
-            Tarefa tarefa = null;
+            TodasAsTarefas tarefa = null;
 
             while ((linha = reader.readLine()) != null) {
                 if (linha.startsWith("ID: ")) {
                     if (tarefa != null) {
                         tarefas.add(tarefa);
                     }
-                    tarefa = new TarefaConcreta(0, linha, linha, linha, linha, linha);
+                    tarefa = new TodasAsTarefas(0, linha, linha, linha, linha, linha);
                     tarefa.setId(Integer.parseInt(linha.substring(4)));
                 } else if (linha.startsWith("Título: ")) {
                     if (tarefa != null) {

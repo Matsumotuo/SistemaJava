@@ -1,21 +1,22 @@
 package controller;
 
-import models.Tarefa;
+import models.TodasAsTarefas;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class TarefaController {
-    private List<Tarefa> tarefas;
+    private List<TodasAsTarefas> tarefas;
 
     public TarefaController() {
         this.tarefas = new ArrayList<>();
     }
 
-    public void adicionarTarefa(Tarefa tarefa) {
+    public void adicionarTarefa(TodasAsTarefas tarefa) {
         tarefas.add(tarefa);
     }
 
-    public void editarTarefa(int id, Tarefa tarefaAtualizada) {
+    public void editarTarefa(int id, TodasAsTarefas tarefaAtualizada) {
         for (int i = 0; i < tarefas.size(); i++) {
             if (tarefas.get(i).getId() == id) {
                 tarefas.set(i, tarefaAtualizada);
@@ -28,7 +29,7 @@ public class TarefaController {
         tarefas.removeIf(tarefa -> tarefa.getId() == id);
     }
 
-    public List<Tarefa> listarTarefas() {
+    public List<TodasAsTarefas> listarTarefas() {
         return tarefas;
     }
 }

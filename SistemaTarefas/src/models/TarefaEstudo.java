@@ -2,15 +2,15 @@ package models;
 
 import view.ExecutarTarefas;
 
-public class TarefaEstudo extends Tarefa implements ExecutarTarefas {
+public class TarefaEstudo extends TodasAsTarefas implements ExecutarTarefas {
+
     private String disciplina;
 
-
-    public TarefaEstudo(int id, String titulo, String descricao, String dataTarefa, String prioridade, String status, String disciplina) {
+    public TarefaEstudo(int id, String titulo, String descricao, String dataTarefa, String prioridade, String status,
+            String disciplina) {
         super(id, titulo, descricao, dataTarefa, prioridade, status);
         this.disciplina = disciplina;
     }
-
 
     public String getDisciplina() {
         return disciplina;
@@ -24,7 +24,6 @@ public class TarefaEstudo extends Tarefa implements ExecutarTarefas {
     public String toString() {
         return super.toString() + ", disciplina='" + disciplina + '\'' + '}';
     }
-
 
     @Override
     public void executar() {

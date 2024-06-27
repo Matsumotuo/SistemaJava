@@ -8,12 +8,12 @@ import java.util.List;
 
 public class ExportadorTodasAsTarefas {
 
-    public void exportarTodasAsTarefas(List<Tarefa> tarefas, String nomeArquivo) {
+    public void exportarTodasAsTarefas(List<TodasAsTarefas> tarefas, String nomeArquivo) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(nomeArquivo))) {
             writer.println("Lista de Todas as Tarefas:");
             writer.println();
 
-            for (Tarefa tarefa : tarefas) {
+            for (TodasAsTarefas tarefa : tarefas) {
                 writer.println("ID: " + tarefa.getId());
                 writer.println("Título: " + tarefa.getTitulo());
                 writer.println("Descrição: " + tarefa.getDescricao());

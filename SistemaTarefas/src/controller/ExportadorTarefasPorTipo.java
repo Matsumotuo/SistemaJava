@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-import models.Tarefa;
 import models.TarefaAlimentacao;
 import models.TarefaDataComemorativa;
 import models.TarefaEstudo;
@@ -16,10 +15,11 @@ import models.TarefaPessoal;
 import models.TarefaProjetos;
 import models.TarefaTrabalho;
 import models.TarefaUrgente;
+import models.TodasAsTarefas;
 
 public class ExportadorTarefasPorTipo {
 
-    public void exportarListaTarefasPorTipo(List<Tarefa> tarefas, String nomeArquivo) {
+    public void exportarListaTarefasPorTipo(List<TodasAsTarefas> tarefas, String nomeArquivo) {
         int totalUrgentes = 0;
         int totalPessoais = 0;
         int totalTrabalho = 0;
@@ -35,7 +35,7 @@ public class ExportadorTarefasPorTipo {
             writer.println("Lista de Tarefas por Tipo:");
             writer.println();
 
-            for (Tarefa tarefa : tarefas) {
+            for (TodasAsTarefas tarefa : tarefas) {
                 if (tarefa instanceof TarefaUrgente) {
                     writer.println("Tarefa Urgente: " + tarefa.getTitulo());
                     writer.println("Descrição: " + tarefa.getDescricao());
@@ -66,33 +66,31 @@ public class ExportadorTarefasPorTipo {
                     writer.println("Disciplina: " + ((TarefaEstudo) tarefa).getDisciplina());
                     writer.println();
                     totalEstudo++;
-                }else if (tarefa instanceof TarefaAlimentacao) {
+                } else if (tarefa instanceof TarefaAlimentacao) {
                     writer.println("Tarefa de Estudo: " + tarefa.getTitulo());
                     writer.println("Descrição: " + tarefa.getDescricao());
                     writer.println("Disciplina: " + ((TarefaAlimentacao) tarefa).getPrato());
                     writer.println();
                     totalAlimento++;
-                }
-                else if (tarefa instanceof TarefaDataComemorativa) {
+                } else if (tarefa instanceof TarefaDataComemorativa) {
                     writer.println("Tarefa de Estudo: " + tarefa.getTitulo());
                     writer.println("Descrição: " + tarefa.getDescricao());
                     writer.println("Disciplina: " + ((TarefaDataComemorativa) tarefa).getDatas());
                     writer.println();
                     totalNiver++;
-                }
-                else if (tarefa instanceof TarefaExercicio) {
+                } else if (tarefa instanceof TarefaExercicio) {
                     writer.println("Tarefa de Estudo: " + tarefa.getTitulo());
                     writer.println("Descrição: " + tarefa.getDescricao());
                     writer.println("Disciplina: " + ((TarefaExercicio) tarefa).getTipoExercicio());
                     writer.println();
                     totalExer++;
-                }else if (tarefa instanceof TarefaFinanceira) {
+                } else if (tarefa instanceof TarefaFinanceira) {
                     writer.println("Tarefa de Estudo: " + tarefa.getTitulo());
                     writer.println("Descrição: " + tarefa.getDescricao());
                     writer.println("Disciplina: " + ((TarefaFinanceira) tarefa).getOlharData());
                     writer.println();
                     totalFinanc++;
-                }else if (tarefa instanceof TarefaProjetos) {
+                } else if (tarefa instanceof TarefaProjetos) {
                     writer.println("Tarefa de Estudo: " + tarefa.getTitulo());
                     writer.println("Descrição: " + tarefa.getDescricao());
                     writer.println("Disciplina: " + ((TarefaProjetos) tarefa).getQual());
@@ -100,7 +98,6 @@ public class ExportadorTarefasPorTipo {
                     totalProjeto++;
                 }
             }
-            
 
             writer.println("Total de Tarefas Urgentes: " + totalUrgentes);
             writer.println("Total de Tarefas Pessoais: " + totalPessoais);

@@ -2,15 +2,15 @@ package models;
 
 import view.ExecutarTarefas;
 
-public class TarefaPessoal extends Tarefa implements ExecutarTarefas {
+public class TarefaPessoal extends TodasAsTarefas implements ExecutarTarefas {
     private String pessoaEnvolvida;
 
-    public TarefaPessoal(int id, String titulo, String descricao, String dataTarefa, String prioridade, String status, String pessoaEnvolvida) {
+    public TarefaPessoal(int id, String titulo, String descricao, String dataTarefa, String prioridade, String status,
+            String pessoaEnvolvida) {
         super(id, titulo, descricao, dataTarefa, prioridade, status);
         this.pessoaEnvolvida = pessoaEnvolvida;
     }
 
-  
     public String getPessoaEnvolvida() {
         return pessoaEnvolvida;
     }
@@ -19,12 +19,10 @@ public class TarefaPessoal extends Tarefa implements ExecutarTarefas {
         this.pessoaEnvolvida = pessoaEnvolvida;
     }
 
-  
     @Override
     public String toString() {
         return super.toString() + ", pessoaEnvolvida='" + pessoaEnvolvida + '\'' + '}';
     }
-
 
     @Override
     public void executar() {

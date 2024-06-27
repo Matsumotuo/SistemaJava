@@ -57,9 +57,9 @@ public class Main {
                     tarefaOperacoes.exportarTodasAsTarefas(tarefaController.listarTarefas());
                     break;
                 case 9:
-                    List<Tarefa> tarefasImportadas = tarefaOperacoes.importarTodasAsTarefas("todas_as_tarefas.txt");
-                    // Adicionar as tarefas importadas ao controlador de tarefas
-                    for (Tarefa tarefa : tarefasImportadas) {
+                    List<TodasAsTarefas> tarefasImportadas = tarefaOperacoes
+                            .importarTodasAsTarefas("todas_as_tarefas.txt");
+                    for (TodasAsTarefas tarefa : tarefasImportadas) {
                         tarefaController.adicionarTarefa(tarefa);
                     }
                     break;
