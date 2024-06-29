@@ -1,73 +1,110 @@
-1. Breve Descrição do Projeto
-O projeto Sistema de Gerenciamento de Tarefas é uma aplicação Java destinada a facilitar a organização e gestão de tarefas. O sistema permite adicionar, editar, excluir, listar, marcar como concluída e exportar/importar tarefas, proporcionando uma maneira eficiente de gerenciar atividades diárias.
+Objetivo do Código
+O objetivo deste código é implementar um sistema de gerenciamento de cinema que permite controlar e visualizar informações sobre cinemas, clientes, filmes, funcionários, salas e sessões. O sistema segue a arquitetura Model-View-Controller (MVC) para separar a lógica de negócios, a interface do usuário e o controle de fluxo.
 
-2. Objetivos e Funcionalidades Principais
-Objetivos:
+Estrutura do Projeto
+O projeto é organizado em vários pacotes, cada um contendo classes que seguem a arquitetura MVC:
 
-Facilitar a organização de tarefas diárias.
-Prover uma interface de fácil uso para a manipulação das tarefas.
-Permitir a exportação e importação de tarefas para e a partir de arquivos, garantindo a persistência e a portabilidade das informações.
-Funcionalidades Principais:
+controller: Contém as classes responsáveis pelo controle da lógica do sistema.
+model: Contém as classes que representam os dados e a lógica de negócios.
+view: Contém as classes responsáveis pela interface do usuário.
+SistemaCinema: Contém a classe principal para executar a aplicação.
+Pacotes e Classes
+1. controller
+CinemaController.java: Gerencia a lógica relacionada ao cinema, como adicionar novos cinemas, atualizar informações e listar cinemas existentes.
+ClienteController.java: Gerencia a lógica relacionada aos clientes, incluindo adicionar novos clientes, atualizar informações de clientes e listar clientes.
+FilmeController.java: Gerencia a lógica relacionada aos filmes, como adicionar novos filmes, atualizar informações e listar filmes disponíveis.
+FuncionarioController.java: Gerencia a lógica relacionada aos funcionários, incluindo adicionar novos funcionários, atualizar informações e listar funcionários.
+SalaController.java: Gerencia a lógica relacionada às salas de cinema, como adicionar novas salas, atualizar informações e listar salas disponíveis.
+SessaoController.java: Gerencia a lógica relacionada às sessões de cinema, incluindo adicionar novas sessões, atualizar informações e listar sessões disponíveis.
+2. model
+Assento.java: Representa um assento em uma sala de cinema, com atributos como número do assento, disponibilidade e tipo de assento.
+Atendente.java: Representa um atendente do cinema, com atributos específicos para o papel de atendente.
+Cinema.java: Representa um cinema, com atributos como nome, endereço e lista de salas.
+Cliente.java: Representa um cliente do cinema, com atributos como nome, CPF e histórico de compras.
+Filme.java: Representa um filme, com atributos como título, duração, gênero e classificação indicativa.
+Funcionario.java: Representa um funcionário do cinema, com atributos comuns a todos os funcionários, como nome, CPF e cargo.
+Gerente.java: Representa um gerente do cinema, com atributos específicos para o papel de gerente.
+Ingresso.java: Representa um ingresso para um filme, com atributos como assento, sessão e preço.
+Sala.java: Representa uma sala de cinema, com atributos como número da sala, capacidade e lista de assentos.
+Sessao.java: Representa uma sessão de filme, com atributos como filme, sala, horário de início e fim.
+3. view
+CinemaView.java: Interface do usuário para visualização do cinema e interação com o usuário.
+ClienteView.java: Interface do usuário para visualização dos clientes e interação com o usuário.
+FilmeView.java: Interface do usuário para visualização dos filmes e interação com o usuário.
+FuncionarioView.java: Interface do usuário para visualização dos funcionários e interação com o usuário.
+SalaView.java: Interface do usuário para visualização das salas e interação com o usuário.
+SessaoView.java: Interface do usuário para visualização das sessões e interação com o usuário.
+4. SistemaCinema
+Main.java: Classe principal para executar a aplicação, contendo o método main que inicia o sistema.
+Descrição das Classes
+CinemaController.java
+Controlador responsável por gerenciar a lógica relacionada ao cinema, como adicionar novos cinemas, atualizar informações e listar cinemas existentes.
 
-Adicionar Tarefa: Permite ao usuário adicionar uma nova tarefa ao sistema.
-Editar Tarefa: Permite ao usuário editar uma tarefa existente.
-Excluir Tarefa: Permite ao usuário excluir uma tarefa do sistema.
-Listar Tarefas: Exibe uma lista de todas as tarefas cadastradas.
-Ver Estatísticas: Mostra estatísticas sobre as tarefas, como o número de tarefas concluídas e pendentes.
-Marcar Tarefa como Concluída: Permite ao usuário marcar uma tarefa como concluída.
-Exportar Tarefas por Tipo: Exporta uma lista de tarefas filtradas por tipo para um arquivo.
-Exportar Todas as Tarefas: Exporta todas as tarefas para um arquivo.
-Importar Todas as Tarefas: Importa todas as tarefas de um arquivo previamente exportado.
+ClienteController.java
+Controlador responsável por gerenciar a lógica relacionada aos clientes, incluindo adicionar novos clientes, atualizar informações de clientes e listar clientes.
 
-3. Informações sobre as Classes e suas Relações
-Pacote controller:
+FilmeController.java
+Controlador responsável por gerenciar a lógica relacionada aos filmes, como adicionar novos filmes, atualizar informações e listar filmes disponíveis.
 
-Classe TarefaController:
+FuncionarioController.java
+Controlador responsável por gerenciar a lógica relacionada aos funcionários, incluindo adicionar novos funcionários, atualizar informações e listar funcionários.
 
-Gerencia a lógica principal das operações de tarefas.
-Métodos: adicionarTarefa, editarTarefa, excluirTarefa, listarTarefas.
-Classe ExportadorTodasAsTarefas:
+SalaController.java
+Controlador responsável por gerenciar a lógica relacionada às salas de cinema, como adicionar novas salas, atualizar informações e listar salas disponíveis.
 
-Exporta todas as tarefas para um arquivo de texto.
-Método: exportarTodasAsTarefas.
-Classe ExportadorTarefasPorTipo:
+SessaoController.java
+Controlador responsável por gerenciar a lógica relacionada às sessões de cinema, incluindo adicionar novas sessões, atualizar informações e listar sessões disponíveis.
 
-Exporta tarefas filtradas por tipo para um arquivo de texto.
-Método: exportarListaTarefasPorTipo.
-Classe ImportadorTodasAsTarefas:
+Assento.java
+Modelo que representa um assento em uma sala de cinema, com atributos como número do assento, disponibilidade e tipo de assento.
 
-Importa todas as tarefas de um arquivo de texto.
-Método: importarTodasAsTarefas.
-Interface TarefaOperacoes:
+Atendente.java
+Modelo que representa um atendente do cinema, com atributos específicos para o papel de atendente.
 
-Define as operações que podem ser realizadas nas tarefas.
-Métodos: adicionarTarefa, editarTarefa, excluirTarefa, listarTarefas, verEstatisticas, marcarTarefaComoConcluida, exportarListaTarefasPorTipo, exportarTodasAsTarefas, importarTodasAsTarefas.
-Classe TarefaOperacoesImpl:
+Cinema.java
+Modelo que representa um cinema, com atributos como nome, endereço e lista de salas.
 
-Implementa a interface TarefaOperacoes.
-Métodos: Implementação de todos os métodos definidos na interface TarefaOperacoes.
-Pacote models:
+Cliente.java
+Modelo que representa um cliente do cinema, com atributos como nome, CPF e histórico de compras.
 
-Classe Tarefa:
-Representa uma tarefa.
-Atributos: id, titulo, descricao, dataTarefa, prioridade, status.
-Métodos: Getters e setters para os atributos.
-Pacote view:
+Filme.java
+Modelo que representa um filme, com atributos como título, duração, gênero e classificação indicativa.
 
-Classe TarefaView:
-Responsável pela exibição das tarefas.
-Métodos: Implementação de métodos para exibir tarefas e mensagens ao usuário.
-Classe Main:
+Funcionario.java
+Modelo que representa um funcionário do cinema, com atributos comuns a todos os funcionários, como nome, CPF e cargo.
 
-Contém o método main que inicializa e executa a aplicação.
-Controla o fluxo principal do programa e interage com o usuário através do console.
+Gerente.java
+Modelo que representa um gerente do cinema, com atributos específicos para o papel de gerente.
 
-4. Uso do ChatGPT
-O ChatGPT foi utilizado para auxiliar na refatoração e melhoria do código, além de criar a documentação. As principais contribuições incluem:
+Ingresso.java
+Modelo que representa um ingresso para um filme, com atributos como assento, sessão e preço.
 
-Refatoração da Main.java para torná-la mais limpa e organizada.
-Criação de interfaces para definir operações e implementação das mesmas.
-Adição de novas funcionalidades, como a importação de tarefas a partir de arquivos.
-Criação de documentação abrangente que descreve o projeto, seus objetivos, funcionalidades, classes e relações.
-Funcionalidade de Marcar como Concluída: Implementar a funcionalidade de marcar uma tarefa como concluída no menu principal, facilitando a interação do usuário com a aplicação.
-Corrigir erros dos métodos de exportação. 
+Sala.java
+Modelo que representa uma sala de cinema, com atributos como número da sala, capacidade e lista de assentos.
+
+Sessao.java
+Modelo que representa uma sessão de filme, com atributos como filme, sala, horário de início e fim.
+
+CinemaView.java
+Classe de visualização para exibir informações do cinema e interagir com o usuário.
+
+ClienteView.java
+Classe de visualização para exibir informações dos clientes e interagir com o usuário.
+
+FilmeView.java
+Classe de visualização para exibir informações dos filmes e interagir com o usuário.
+
+FuncionarioView.java
+Classe de visualização para exibir informações dos funcionários e interagir com o usuário.
+
+SalaView.java
+Classe de visualização para exibir informações das salas e interagir com o usuário.
+
+SessaoView.java
+Classe de visualização para exibir informações das sessões e interagir com o usuário.
+
+Main.java
+Classe principal que contém o método main para iniciar a aplicação.
+
+Utilização do ChatGPT
+O ChatGPT foi usado na criação da documentação e para a correção de alguns erros nas funções.
